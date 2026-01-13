@@ -1,0 +1,54 @@
+/* ============================================ */
+/* LOCKED - ROTATING RINGS PRELOADER            */
+/* ============================================ */
+
+.rings-preloader {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #12122a 50%, #0d0d20 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.style-rotating-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 3px solid transparent;
+  border-top-color: #3649A6;
+  border-right-color: #3649A6;
+  border-radius: 50%;
+  animation: spinClockwise 2s linear infinite;
+}
+
+.inner-ring {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 2px solid transparent;
+  border-bottom-color: #F05133;
+  border-left-color: #F05133;
+  border-radius: 50%;
+  animation: spinCounterClockwise 1.5s linear infinite;
+}
+
+.logo-center {
+  width: 240px;
+  height: auto;
+  z-index: 10;
+}
+
+@keyframes spinClockwise {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinCounterClockwise {
+  100% { transform: rotate(-360deg); }
+}

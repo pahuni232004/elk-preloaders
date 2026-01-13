@@ -1,0 +1,139 @@
+/* ============================================ */
+/* LOCKED FINAL PRELOADER - Water Ripple Style */
+/* ============================================ */
+
+.final-preloader {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a1a 0%, #12122a 50%, #0d0d20 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.water-preloader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smooth water ripples */
+.water-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid rgba(54, 73, 166, 0.3);
+  animation: waterRipple 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.water-ripple.w2 { animation-delay: 0.8s; }
+.water-ripple.w3 { animation-delay: 1.6s; }
+.water-ripple.w4 { animation-delay: 2.4s; }
+.water-ripple.w5 { animation-delay: 3.2s; }
+
+@keyframes waterRipple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+    border-width: 1.5px;
+    border-color: rgba(54, 73, 166, 0.35);
+  }
+  30% {
+    opacity: 0.25;
+    border-color: rgba(54, 73, 166, 0.25);
+  }
+  60% {
+    opacity: 0.12;
+    border-color: rgba(54, 73, 166, 0.15);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+    border-width: 0.5px;
+    border-color: rgba(54, 73, 166, 0);
+  }
+}
+
+/* Logo with gentle pulse */
+.logo-pulse {
+  width: 280px;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  animation: gentlePulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(54, 73, 166, 0.3));
+}
+
+@keyframes gentlePulse {
+  0%, 100% { 
+    transform: scale(1); 
+    filter: drop-shadow(0 0 20px rgba(54, 73, 166, 0.3));
+  }
+  50% { 
+    transform: scale(1.04); 
+    filter: drop-shadow(0 0 35px rgba(54, 73, 166, 0.5));
+  }
+}
+
+/* Audio waves below - full width of logo */
+.waves-below {
+  position: absolute;
+  top: calc(50% + 140px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 18px;
+  width: 260px;
+  z-index: 15;
+}
+
+.waves-below span {
+  width: 3px;
+  min-width: 3px;
+  background: linear-gradient(to top, #F05133, #ff8a70);
+  border-radius: 1.5px;
+  animation: smoothWave 1.5s ease-in-out infinite;
+}
+
+.waves-below span:nth-child(1)  { height: 6px; animation-delay: 0.0s; }
+.waves-below span:nth-child(2)  { height: 8px; animation-delay: 0.03s; }
+.waves-below span:nth-child(3)  { height: 10px; animation-delay: 0.06s; }
+.waves-below span:nth-child(4)  { height: 12px; animation-delay: 0.09s; }
+.waves-below span:nth-child(5)  { height: 14px; animation-delay: 0.12s; }
+.waves-below span:nth-child(6)  { height: 16px; animation-delay: 0.15s; }
+.waves-below span:nth-child(7)  { height: 18px; animation-delay: 0.18s; }
+.waves-below span:nth-child(8)  { height: 16px; animation-delay: 0.21s; }
+.waves-below span:nth-child(9)  { height: 18px; animation-delay: 0.24s; }
+.waves-below span:nth-child(10) { height: 14px; animation-delay: 0.27s; }
+.waves-below span:nth-child(11) { height: 18px; animation-delay: 0.30s; }
+.waves-below span:nth-child(12) { height: 14px; animation-delay: 0.33s; }
+.waves-below span:nth-child(13) { height: 18px; animation-delay: 0.36s; }
+.waves-below span:nth-child(14) { height: 16px; animation-delay: 0.39s; }
+.waves-below span:nth-child(15) { height: 18px; animation-delay: 0.42s; }
+.waves-below span:nth-child(16) { height: 16px; animation-delay: 0.45s; }
+.waves-below span:nth-child(17) { height: 14px; animation-delay: 0.48s; }
+.waves-below span:nth-child(18) { height: 12px; animation-delay: 0.51s; }
+.waves-below span:nth-child(19) { height: 10px; animation-delay: 0.54s; }
+.waves-below span:nth-child(20) { height: 8px; animation-delay: 0.57s; }
+.waves-below span:nth-child(21) { height: 6px; animation-delay: 0.60s; }
+
+@keyframes smoothWave {
+  0%, 100% { 
+    transform: scaleY(0.5); 
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scaleY(1); 
+    opacity: 1;
+  }
+}
